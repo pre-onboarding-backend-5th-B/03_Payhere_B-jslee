@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "03-payhere-b-jslee"
+version = "0.1.0"
+description = ""
+authors = ["Jong012 <Jong012>"]
+readme = "README.md"
+packages = [{include = "03_payhere_b_jslee"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = ">=3.2,<4.0"
+django-dotenv = "^1.4.2"
+djangorestframework = "^3.14.0"
+drf-yasg = "^1.21.4"
+
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^3.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
