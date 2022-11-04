@@ -14,6 +14,10 @@ class SignupSerializer(serializers.ModelSerializer):
         write_only=True,
         help_text=password_caution,
     )
+    name = serializers.CharField(
+        required=True,
+        help_text='이름을 입력해 주세요.'
+    )
 
     def create(self, validated_data):
         password = validated_data.pop('password')
