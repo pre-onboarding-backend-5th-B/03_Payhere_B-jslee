@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from user.permissions import IsOwner
+from .models import AccountBook
+from .serializers import AccountBookSerializer
+
+
+class AccountBookViewSet(viewsets.ModelViewSet):
+    serializer_class = AccountBookSerializer
+    permission_classes = [IsOwner]
+    queryset = AccountBook.objects.all()
