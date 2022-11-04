@@ -23,10 +23,10 @@
 ### API
 
 - Functiona
-    - /api/signup: 회원가입
-    - /api/login: 로그인
-    - /api/logout: 로그아웃
-
+    - /user/signup: 회원가입
+    - /user/jwt-auth: 로그인
+    - /user/jwt-verify: 토큰이 유효한지 확인함
+    - /user/jwt-refresh: 만료 시간이 갱신된 새로운 토큰을 얻음
 - 제약사항
     - 토큰 인증 방식
 
@@ -36,7 +36,7 @@
 
 - AccountBook(가계부)
     - **id(pk)**
-    - user(fk - OneToOne): User 모델과 1:1 관계
+    - user(fk - oneToMany): User 모델과 1:1 관계
     - name: 가계부 이름
     - money: 금액
     - status: 수입/지출 상태
