@@ -150,12 +150,12 @@ SWAGGER_SETTINGS = {
     }
 }
 
-JWT_AUTH = {
-    'JWT_SECRET_KEY': SECRET_KEY,
-    'JWT_ALGORITHM': 'HS256',  # 암호화 알고리즘
-    'JWT_ALLOW_REFRESH': True,  # refresh 사용 여부
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),  # 유효기간 설정
-    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(hours=2),  # JWT 토큰 갱신 유효기간
+# SIMPLE JWT 설정
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,  # JWT 토큰 갱신 유효기간
 }
 
 # AUTH_USER SETTINGS
