@@ -160,5 +160,6 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,  # JWT 토큰 갱신 유효기간
 }
 
+
 # AUTH_USER SETTINGS
 AUTH_USER_MODEL = 'user.User'
