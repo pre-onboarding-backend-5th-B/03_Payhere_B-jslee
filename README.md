@@ -58,11 +58,23 @@
 <details>
 
   <summary>
-    이미지 보기
+    User, jwt 관련 api 보기
   </summary>
 
   <div align="center">
-    <img src="docs/img/api_list.png" width="70%" height="70%" alt="페이히어 api 목록"/>
+    <img src="docs/img/user-jwt.png" width="70%" height="70%" alt="페이히어 api 목록"/>
+  </div>
+
+</details>
+
+<details>
+
+  <summary>
+    AccountBook 관련 api 보기
+  </summary>
+
+  <div align="center">
+    <img src="docs/img/accountbook-api.png" width="70%" height="70%" alt="페이히어 api 목록"/>
   </div>
 
 </details>
