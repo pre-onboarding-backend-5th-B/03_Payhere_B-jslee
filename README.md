@@ -20,13 +20,6 @@
     - email
     - password
 
-### API
-
-- Functiona
-    - /user/signup: 회원가입
-    - /user/jwt-auth: 로그인
-    - /user/jwt-verify: 토큰이 유효한지 확인함
-    - /user/jwt-refresh: 만료 시간이 갱신된 새로운 토큰을 얻음
 - 제약사항
     - 토큰 인증 방식
 
@@ -36,8 +29,11 @@
 
 - AccountBook(가계부)
     - **id(pk)**
-    - user(fk - oneToMany): User 모델과 1:1 관계
+    - user(fk - OneToMany): User 과 1:N 관계
     - name: 가계부 이름
+
+- AccountBookDiary(가계부)
+    - account_book(fk - OneToMany): AccountBook 과 1:N 관계
     - money: 금액
     - status: 수입/지출 상태
     - is_delete: 삭제 여부
@@ -46,24 +42,27 @@
 
 - Memo(메모)
     - **id(pk)**
-    - account_book(fk - OneToMany): 가계부와 외래키
+    - account_book_diary(fk - OneToMany): AccountBookDiary 과 1:N 관계
     - content: 메모 내용
     - created_at: 생성 날짜
     - updated_at: 수정 날짜
 
-### API
-
-- CRRUD
-    - `GET` /api/account-book 가계부 목록 조회
-    - `POST` /api/account-book 가계부 생성
-    - `POST` /api/account-book/:id/memo
-    - `GET` /api/account-book/:id 가계부 상세내용 조회 + Memo
-    - `PATCH/PUT` /api/account-book/:id 가계부 내용 수정
-    - `PATCH/PUT` /api/account-book/:id/memo/:id 메모 수정
-    - `DELETE` /api/account-book/:id 가계부 삭제(soft delete)
-    - `DELETE` /api/account-book/:id/memo/:id 메모 삭제(hard delete)
-- function
-    - /api/account-book/:id/retore 가계부 복구
 - 제약사항
+  - 로그인한 사용자가 본인의 가계부만 접근 가능
+  - 삭제한 내역을 복구할 수 있어야함
     - 로그인한 사용자가 본인의 가계부만 접근 가능
     - 삭제한 내역을 복구할 수 있어야함
+
+## API
+
+<details>
+
+  <summary>
+    이미지 보기
+  </summary>
+
+  <div align="center">
+    <img src="docs/img/api_list.png" width="70%" height="70%" alt="페이히어 api 목록"/>
+  </div>
+
+</details>
