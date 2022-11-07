@@ -10,7 +10,7 @@ from .serializers import AccountBookSerializer, AccountBookDiarySerializer, Memo
     AccountBookDiaryDetailSerializer
 
 
-class AccountBookListCreateView(ListCreateAPIView):
+class AccountBookViewSet(viewsets.ModelViewSet):
     serializer_class = AccountBookSerializer
     queryset = AccountBook.objects.all()
 
