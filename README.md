@@ -20,13 +20,6 @@
     - email
     - password
 
-### API
-
-- Functiona
-    - /api/signup: 회원가입
-    - /api/login: 로그인
-    - /api/logout: 로그아웃
-
 - 제약사항
     - 토큰 인증 방식
 
@@ -54,7 +47,13 @@
     - created_at: 생성 날짜
     - updated_at: 수정 날짜
 
-### API
+- 제약사항
+  - 로그인한 사용자가 본인의 가계부만 접근 가능
+  - 삭제한 내역을 복구할 수 있어야함
+    - 로그인한 사용자가 본인의 가계부만 접근 가능
+    - 삭제한 내역을 복구할 수 있어야함
+
+## API
 
 <details>
 
