@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view
-from rest_framework.generics import ListCreateAPIView, get_object_or_404
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
 from .models import AccountBook, AccountBookDiary, Memo
@@ -28,6 +28,7 @@ class AccountBookDiaryViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return self.queryset.select_related('account_book').filter(
+            is_delete=False,
             account_book__user_id=self.request.user.pk,
             account_book_id=self.kwargs['account_book_id'])
 
@@ -54,6 +55,7 @@ class MemoViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         fk_qs = AccountBookDiary.objects.filter(
+            is_delete=False,
             account_book__user_id=self.request.user.pk,
         )
         if fk_qs.exists():
